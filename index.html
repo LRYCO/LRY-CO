@@ -10,7 +10,7 @@
         .container { width: 90%; max-width: 800px; margin: auto; padding: 20px; }
         .section { margin: 40px 0; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
         h2 { color: #ff0077; }
-        .btn { display: block; text-align: center; background: #ff0077; color: white; padding: 10px; border-radius: 5px; text-decoration: none; }
+        .btn { display: block; text-align: center; background: #ff0077; color: white; padding: 10px; border-radius: 5px; text-decoration: none; border: none; cursor: pointer; }
         .btn:hover { background: #cc005f; }
         form input, form textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
         footer { text-align: center; padding: 20px; background: #000; color: white; margin-top: 20px; }
@@ -32,14 +32,14 @@
             <p>Avec notre expertise, nous t'aidons à augmenter tes revenus et à optimiser ton contenu sans avoir à gérer les aspects techniques et promotionnels.</p>
         </div>
 
-        <!-- Formulaire d'inscription -->
+        <!-- Formulaire de candidature -->
         <div class="section">
             <h2>📩 Rejoins LRY&CO !</h2>
-            <form action="https://formsubmit.co/ton-email@gmail.com" method="POST" onsubmit="sendSMS()">
-                <input type="text" name="Nom" placeholder="Nom & Prénom" required>
-                <input type="email" name="Email" placeholder="Email" required>
-                <input type="text" name="Réseaux" placeholder="Compte Instagram / Telegram" required>
-                <textarea name="Message" placeholder="Parle-nous de toi..." required></textarea>
+            <form id="contact-form">
+                <input type="text" name="nom" placeholder="Nom & Prénom" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="reseaux" placeholder="Compte Instagram / Telegram" required>
+                <textarea name="message" placeholder="Parle-nous de toi..." required></textarea>
                 <button class="btn" type="submit">Envoyer ma candidature</button>
             </form>
         </div>
@@ -75,15 +75,23 @@
         <h2>💬 Besoin d'aide ? Clique ici !</h2>
     </div>
 
-    <!-- Twilio SMS Notification -->
+    <!-- EmailJS pour envoyer la candidature par mail -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        function sendSMS() {
-            fetch("sms.php", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ message: "Nouvelle candidature reçue ! Vérifie tes emails." })
+        (function() {
+            emailjs.init("XJB0Q84GuBllcMTQY"); // Mets ton vrai User ID entre guillemets
+
+            document.getElementById("contact-form").addEventListener("submit", function(event) {
+                event.preventDefault(); // Empêche le rechargement de la page
+
+                emailjs.sendForm("service_l0gtrgp", "template_gnfw19h", this)
+                    .then(function() {
+                        alert("Candidature envoyée avec succès !");
+                    }, function(error) {
+                        alert("Erreur : " + error.text);
+                    });
             });
-        }
+        })();
     </script>
 
     <!-- Footer -->
@@ -92,3 +100,4 @@
     </footer>
 </body>
 </html>
+
