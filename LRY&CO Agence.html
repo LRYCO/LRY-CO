@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRY&CO - Agence OnlyFans & MYM</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #333; }
+        header { background: #000; color: #fff; text-align: center; padding: 20px; font-size: 24px; }
+        .container { width: 90%; max-width: 800px; margin: auto; padding: 20px; }
+        .section { margin: 40px 0; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
+        h2 { color: #ff0077; }
+        .btn { display: block; text-align: center; background: #ff0077; color: white; padding: 10px; border-radius: 5px; text-decoration: none; }
+        .btn:hover { background: #cc005f; }
+        form input, form textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        footer { text-align: center; padding: 20px; background: #000; color: white; margin-top: 20px; }
+        .testimonial { background: #f1f1f1; padding: 15px; border-radius: 10px; margin-bottom: 15px; }
+        .stars { color: gold; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <header>
+        🚀 Bienvenue chez LRY&CO - Développe ton Succès OnlyFans & MYM 🚀
+    </header>
+
+    <div class="container">
+        <!-- Présentation améliorée -->
+        <div class="section">
+            <h2>📢 À propos de LRY&CO</h2>
+            <p><strong>LRY&CO</strong> est une agence spécialisée dans l'accompagnement des créateurs et créatrices de contenu sur OnlyFans et MYM.</p>
+            <p>Nous offrons un accompagnement sur mesure pour booster ta carrière : gestion de compte, marketing, stratégie de croissance et protection de ton anonymat.</p>
+            <p>Avec notre expertise, nous t'aidons à augmenter tes revenus et à optimiser ton contenu sans avoir à gérer les aspects techniques et promotionnels.</p>
+        </div>
+
+        <!-- Formulaire d'inscription -->
+        <div class="section">
+            <h2>📩 Rejoins LRY&CO !</h2>
+            <form action="https://formsubmit.co/ton-email@gmail.com" method="POST" onsubmit="sendSMS()">
+                <input type="text" name="Nom" placeholder="Nom & Prénom" required>
+                <input type="email" name="Email" placeholder="Email" required>
+                <input type="text" name="Réseaux" placeholder="Compte Instagram / Telegram" required>
+                <textarea name="Message" placeholder="Parle-nous de toi..." required></textarea>
+                <button class="btn" type="submit">Envoyer ma candidature</button>
+            </form>
+        </div>
+
+        <!-- Avis des modèles -->
+        <div class="section">
+            <h2>⭐ Témoignages de nos modèles</h2>
+            <div class="testimonial">
+                <p>"Grâce à LRY&CO, j'ai multiplié mes revenus par 3 en quelques mois. Un accompagnement sérieux et professionnel !"</p>
+                <p class="stars">★★★★★</p>
+                <p>- Laura M.</p>
+            </div>
+            <div class="testimonial">
+                <p>"Je ne savais pas par où commencer, mais l'équipe m'a aidée à structurer mon contenu et à trouver mes abonnés."</p>
+                <p class="stars">★★★★★</p>
+                <p>- Emma S.</p>
+            </div>
+            <div class="testimonial">
+                <p>"Sécurité, anonymat et rentabilité... tout ce que je cherchais ! LRY&CO a transformé ma carrière."</p>
+                <p class="stars">★★★★★</p>
+                <p>- Sarah B.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <script>
+        function chatbot() {
+            alert("👋 Bonjour ! Comment pouvons-nous vous aider ? Contactez-nous sur Instagram @lryco_ ou par email lryco31@gmail.com");
+        }
+    </script>
+    <div class="section" onclick="chatbot()" style="cursor:pointer; text-align:center;">
+        <h2>💬 Besoin d'aide ? Clique ici !</h2>
+    </div>
+
+    <!-- Twilio SMS Notification -->
+    <script>
+        function sendSMS() {
+            fetch("sms.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: "Nouvelle candidature reçue ! Vérifie tes emails." })
+            });
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        📲 Suis-nous sur Instagram : <a href="https://instagram.com/lryco_" target="_blank" style="color:#ff0077;">@lryco_</a> | 📧 Contact : lryco31@gmail.com
+    </footer>
+</body>
+</html>
