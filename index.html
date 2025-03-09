@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LRY&CO - Agence OnlyFans & MYM</title>
+    <title>LRY&CO - OnlyFans & MYM Agency</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #333; }
         header { background: #000; color: #fff; text-align: center; padding: 20px; font-size: 24px; }
@@ -20,83 +20,90 @@
 </head>
 <body>
     <header>
-        🚀 Bienvenue chez LRY&CO - Développe ton Succès OnlyFans & MYM 🚀
+        🚀 Welcome to LRY&CO - Boost Your Success on OnlyFans & MYM 🚀
     </header>
 
     <div class="container">
-        <!-- Présentation améliorée -->
         <div class="section">
-            <h2>📢 À propos de LRY&CO</h2>
-            <p><strong>LRY&CO</strong> est une agence spécialisée dans l'accompagnement des créateurs et créatrices de contenu sur OnlyFans et MYM.</p>
-            <p>Nous offrons un accompagnement sur mesure pour booster ta carrière : gestion de compte, marketing, stratégie de croissance et protection de ton anonymat.</p>
-            <p>Avec notre expertise, nous t'aidons à augmenter tes revenus et à optimiser ton contenu sans avoir à gérer les aspects techniques et promotionnels.</p>
+            <h2>📢 About LRY&CO</h2>
+            <p><strong>LRY&CO</strong> is an agency specialized in helping creators succeed on OnlyFans and MYM.</p>
+            <p>We offer personalized support to grow your career: account management, marketing, growth strategies, and privacy protection.</p>
+            <p>With our expertise, we help you maximize your income and optimize your content without worrying about technical and promotional aspects.</p>
         </div>
 
-        <!-- Formulaire de candidature -->
         <div class="section">
-            <h2>📩 Rejoins LRY&CO !</h2>
+            <h2>📩 Join LRY&CO!</h2>
             <form id="contact-form">
-                <input type="text" name="nom" placeholder="Nom & Prénom" required>
+                <input type="text" name="name" placeholder="Full Name" required>
                 <input type="email" name="email" placeholder="Email" required>
-                <input type="text" name="reseaux" placeholder="Compte Instagram / Telegram" required>
-                <textarea name="message" placeholder="Parle-nous de toi..." required></textarea>
-                <button class="btn" type="submit">Envoyer ma candidature</button>
+                <input type="text" name="social" placeholder="Instagram / Telegram Account" required>
+                <textarea name="message" placeholder="Tell us about yourself..." required></textarea>
+                <button class="btn" type="submit">Submit Application</button>
             </form>
         </div>
 
-        <!-- Avis des modèles -->
         <div class="section">
-            <h2>⭐ Témoignages de nos modèles</h2>
+            <h2>⭐ Testimonials from Our Models</h2>
             <div class="testimonial">
-                <p>"Grâce à LRY&CO, j'ai multiplié mes revenus par 3 en quelques mois. Un accompagnement sérieux et professionnel !"</p>
+                <p>"Thanks to LRY&CO, I tripled my income in just a few months. A serious and professional team!"</p>
                 <p class="stars">★★★★★</p>
                 <p>- Laura M.</p>
             </div>
             <div class="testimonial">
-                <p>"Je ne savais pas par où commencer, mais l'équipe m'a aidée à structurer mon contenu et à trouver mes abonnés."</p>
+                <p>"I had no idea where to start, but the team helped me structure my content and find my audience."</p>
                 <p class="stars">★★★★★</p>
                 <p>- Emma S.</p>
             </div>
             <div class="testimonial">
-                <p>"Sécurité, anonymat et rentabilité... tout ce que je cherchais ! LRY&CO a transformé ma carrière."</p>
+                <p>"Security, anonymity, and profitability... exactly what I was looking for! LRY&CO transformed my career."</p>
                 <p class="stars">★★★★★</p>
                 <p>- Sarah B.</p>
             </div>
         </div>
+
+        <div class="section">
+            <h2>📝 Leave a Review</h2>
+            <form id="review-form">
+                <textarea name="review" placeholder="Write your review here..." required></textarea>
+                <button class="btn" type="submit">Submit Review</button>
+            </form>
+        </div>
     </div>
 
-    <!-- Chatbot -->
     <script>
         function chatbot() {
-            alert("👋 Bonjour ! Comment pouvons-nous vous aider ? Contactez-nous sur Instagram @lryco_ ou par email lryco31@gmail.com");
+            alert("👋 Hello! How can we assist you? Contact us on Instagram @lryco_ or via email lryco31@gmail.com");
         }
     </script>
     <div class="section" onclick="chatbot()" style="cursor:pointer; text-align:center;">
-        <h2>💬 Besoin d'aide ? Clique ici !</h2>
+        <h2>💬 Need help? Click here!</h2>
     </div>
 
-    <!-- EmailJS pour envoyer la candidature par mail -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         (function() {
-            emailjs.init("XJB0Q84GuBllcMTQY"); // Mets ton vrai User ID entre guillemets
+            emailjs.init("XJB0Q84GuBllcMTQY");
 
             document.getElementById("contact-form").addEventListener("submit", function(event) {
-                event.preventDefault(); // Empêche le rechargement de la page
-
+                event.preventDefault();
                 emailjs.sendForm("service_l0gtrgp", "template_gnfw19h", this)
                     .then(function() {
-                        alert("Candidature envoyée avec succès !");
+                        alert("Application successfully submitted!");
                     }, function(error) {
-                        alert("Erreur : " + error.text);
+                        alert("Error: " + error.text);
                     });
             });
         })();
+
+        document.getElementById("review-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Your review has been successfully recorded.");
+            this.reset();
+        });
     </script>
 
-    <!-- Footer -->
     <footer>
-        📲 Suis-nous sur Instagram : <a href="https://instagram.com/lryco_" target="_blank" style="color:#ff0077;">@lryco_</a> | 📧 Contact : lryco31@gmail.com
+        📲 Follow us on Instagram: <a href="https://instagram.com/lryco_" target="_blank" style="color:#ff0077;">@lryco_</a> | 📧 Contact: lryco31@gmail.com
     </footer>
 </body>
 </html>
